@@ -1,0 +1,20 @@
+.lgd-region__inner--banner .block-views-blocknews-slider-block-1 {
+    background-color: rgb(240,240,240);
+    padding: 2% 0;
+}
+
+.block-views-blocknews-slider-block-1 h2 {
+    text-align: center;
+}
+
+.slick-track {
+    display: flex;
+    max-width: var(--width-container);
+    justify-content: space-between;
+}
+
+.slick__slide {
+    background-color: white;
+    max-width: 380px;
+    padding: 10px;
+}

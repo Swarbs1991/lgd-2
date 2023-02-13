@@ -9,7 +9,8 @@ libraries-extend:
   # of those extending localgov_base/global
   localgov_base/global:
     - teamtalk/variables
-    # - teamtalk/other-library-to-load-on-every-page
+    - teamtalk/overrides
+    - teamtalk/banner
     # - teamtalk/other-library-to-load-on-every-page
   # Add libraries here that extend specific libraries.
   # localgov_base/sample-library:

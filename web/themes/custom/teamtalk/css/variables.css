@@ -33,7 +33,9 @@
     hotpink, just set `--color-accent: hotpink;`
 */
 body {
+  --color-main: white;
   --color-accent: green;
+  --color-section-header-bg: white;
   --font-secondary: oswald, var(--font-primary);
   --line-height: 1.3;
 }

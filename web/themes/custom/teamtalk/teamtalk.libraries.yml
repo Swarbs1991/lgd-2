@@ -1,11 +1,3 @@
-variables:
-  css:
-    base:
-      # This is called in your teamtalk.info.yml file via `libraries-extend`.
-      # This ensures that in the cascade, your variables come after the base theme's
-      # variables.
-      css/variables.css: {}
-
 # To override CSS from the base theme, add your library here, and then use
 # `libraries-extend` to add that code to the library from the base theme. See the
 # teamtalk.info.yml file for an example, using this `sample-library`.
@@ -24,6 +16,24 @@ variables:
 #     theme:
 #       css/sample.css: {}
 
+variables:
+  css:
+    base:
+      # This is called in your teamtalk.info.yml file via `libraries-extend`.
+      # This ensures that in the cascade, your variables come after the base theme's
+      # variables.
+      css/variables.css: {}
+
+overrides:
+  css:
+    theme:
+      css/override.css: {}
+
 banner:
-  js:
-    libraries/slick/slick/slick.min.js: {}
+  css:
+    theme:
+      css/banner.css: {}
+#  js:
+#      js/banner.js: {}
+
+
