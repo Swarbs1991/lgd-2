@@ -23,3 +23,7 @@ variables:
 #   css:
 #     theme:
 #       css/sample.css: {}
+
+banner:
+  js:
+    libraries/slick/slick/slick.min.js: {}

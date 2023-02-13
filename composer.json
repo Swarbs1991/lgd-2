@@ -18,6 +18,8 @@
         "drupal/core-project-message": "^9.1",
         "drupal/core-recommended": "^9.1",
         "drupal/drupal_slider": "^2.1",
+        "drupal/slick_views": "^2.6",
+        "drupal/views_slideshow": "^5.0",
         "drupal/webform": "^6.1",
         "drush/drush": "^10",
         "localgovdrupal/localgov": "^2.0",
