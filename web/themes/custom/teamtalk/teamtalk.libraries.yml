@@ -36,4 +36,7 @@ banner:
 #  js:
 #      js/banner.js: {}
 
-
+box-links:
+  css:
+    theme:
+      css/box-links.css: {}
