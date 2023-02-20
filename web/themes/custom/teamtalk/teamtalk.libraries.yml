@@ -28,6 +28,7 @@ overrides:
   css:
     theme:
       css/override.css: {}
+      css/box-links.css: {}
 
 banner:
   css:
@@ -35,8 +36,3 @@ banner:
       css/banner.css: {}
 #  js:
 #      js/banner.js: {}
-
-box-links:
-  css:
-    theme:
-      css/box-links.css: {}

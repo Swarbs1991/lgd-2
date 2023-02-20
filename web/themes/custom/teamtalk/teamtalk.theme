@@ -12,11 +12,11 @@ function teamtalk_preprocess_page(&$variables) {
   // Add 'is_front' variable to page template.
   $variables['is_front'] = \Drupal::service('path.matcher')->isFrontPage();
 
-  
+  /**
   // Debug output for path.matcher service.
   echo '<pre>';
   echo 'is_front: ' . ($variables['is_front'] ? 'true' : 'false');
   echo '</pre>';
- 
+ **/
 
 }

@@ -1,5 +1,5 @@
 .lgd-region__inner--banner .block-views-blocknews-slider-block-1 {
-    background-color: rgb(240,240,240);
+    background-color: var(--light-grey);
     padding: 2% 0;
 }
 

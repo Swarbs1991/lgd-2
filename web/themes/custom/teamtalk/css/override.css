@@ -1,3 +1,36 @@
+
+/** Branding **/
 .branding__item img {
     background-color: var(--color-accent);
+}
+
+/** LGD sections HOME **/
+.home .padding-horizontal {
+    padding: 0;
+}
+
+.home .lgd-page-section.paragraph {
+    padding: 0;
+}
+
+.sidebar {
+    margin-top: 15px;
+}
+
+.sidebar .lgd-region__inner nav {
+    background-color: var(--light-grey);
+}
+
+.sidebar .lgd-region__inner ul {
+    padding-left: 0;
+}
+
+.sidebar .lgd-region__inner li {
+    list-style: none;
+}
+
+.sidebar a {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2% 0;
 }

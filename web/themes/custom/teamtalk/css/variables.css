@@ -37,5 +37,6 @@ body {
   --color-accent: green;
   --color-section-header-bg: white;
   --font-secondary: oswald, var(--font-primary);
+  --light-grey: rgb(240,240,240);
   --line-height: 1.3;
 }
