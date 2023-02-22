@@ -7,14 +7,22 @@
     text-align: center;
 }
 
-.slick-track {
-    display: flex;
+.draggable {
     max-width: var(--width-container);
-    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0 !important;
+}
+
+.slick-track {
+    
 }
 
 .slick__slide {
+    margin: 0 10px;
     background-color: white;
-    max-width: 380px;
     padding: 10px;
+}
+
+.slick__slide:first-child {
+    margin-left: 0;
 }
