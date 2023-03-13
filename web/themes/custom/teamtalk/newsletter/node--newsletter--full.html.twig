@@ -1,0 +1,141 @@
+{# Emogify #}
+
+  $emogrifier = new \Pelago\Emogrifier();
+  $visualHtml = CssInliner::fromHtml($html)->inlineCss($css)->render();
+
+
+{# Stlyling #}
+
+<style>
+        table {
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+        }
+        .newsletter.full * {
+        box-sizing: border-box;
+        }
+        .newsletter.full tr {
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        }
+        .newsletter.full > tbody > tr > td {
+        padding: 50px 20px;
+        background-color: #D6D6D6;
+        }
+        .newsletter.full .newsletter-table {
+        max-width: 700px;
+        margin: auto;
+        }
+        .newsletter.full .newsletter--header {
+        min-height: 350px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 10px 10px 0 0;
+        overflow: hidden;
+        }
+        @media (max-width: 767px) {
+        .newsletter.full .newsletter--header {
+        min-height: 300px !important; 
+        } 
+        }
+        .newsletter.full .newsletter--header tr td {
+        border: 0;
+        }
+        .newsletter.full .newsletter--header tr.newsletter--header--tr.first > td {
+        height: 100px;
+        padding: 36px 36px 20px;
+        background-color: rgba(0, 0, 0, 0.3);
+        }
+        @media (max-width: 768px) {
+        .newsletter.full .newsletter--header tr.newsletter--header--tr.first > td {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        }
+        }
+        .newsletter.full .newsletter--header tr.newsletter--header--tr.second > td {
+        padding: 0 36px 98px;
+        background-color: rgba(0, 0, 0, 0.3);
+        vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+        .newsletter.full .newsletter--header tr.newsletter--header--tr.second > td {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        padding-bottom: 60px !important;
+        }
+        }
+        .newsletter.full .newsletter--header .logo-link {
+        display: inline;
+        }
+        .newsletter.full .newsletter--header .logo-link img {
+        display: inline-block;
+        width: 80px;
+        height: auto;
+        }
+        .newsletter.full .newsletter--header .title {
+        margin: 0;
+        text-align: center;
+        font-size: 48px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #fff;
+        }
+        @media (max-width: 768px) {
+        .newsletter.full .newsletter--header .title {
+        font-size: 36px !important;
+        }
+        }
+    </style>
+
+{# Newsletter markup #}
+
+{% set rendered_content = content|without('field_newsletter_image') %} {# Get all content except for the image field #}
+
+<table class="newsletter full"> {# This wrapper was <article> by default. It’s used for setting a gray-colored background #}
+ <tbody> {# If the <tbody> isn't added, Drupal will do this #}
+   <tr>
+     <td>
+       <table class="newsletter-table"> {# This is used for the main content #}
+         <tbody>
+           <tr>
+             <td>
+               {# This table is a header with an image as background. #}
+               {# For easily setting “image_style” install Twig Tweak module or generate the image path in the .theme file #}
+               <table class="newsletter--header" style="background-image: url({{ host ~ file_url(node.field_newsletter_image.entity.fileuri|image_style('newsletter_image')) }})">
+                 <tr class="newsletter--header--tr first">
+                   <td>
+                     <a href="{{ host }}" class="logo-link">
+                       <img src="{{ host ~ base_path ~ directory }}
+/images/logo/logo-white.png" alt="TeamTalk logo">
+                     </a>
+                   </td>
+                 </tr>
+                 <tr class="newsletter--header--tr second">
+                   <td>
+                     <h1 class="title">{{ label }}</h1>
+                   </td>
+                 </tr>
+               </table>
+             </td>
+           </tr>
+           <tr> {# Contains main content #}
+             <td>
+               <table class="newsletter--content">
+                 <tr class="newsletter--content--tr">
+                   <td>
+                     {{ rendered_content }}
+                   </td>
+                 </tr>
+               </table>
+             </td>
+           </tr>
+           <tr>…</tr> {# Contains footer content #}
+         </tbody>
+        </table>
+       </td>
+      </tr>
+     </tbody>
+    </table>

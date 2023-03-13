@@ -19,4 +19,9 @@ function teamtalk_preprocess_page(&$variables) {
   echo '</pre>';
  **/
 
+ // Coversion for relational links to fixed for Newsletter
+ function teamtalk_preprocess_block(array &$variables) {
+    $variables['host'] = \Drupal::request()->getSchemeAndHttpHost();
+ }
+
 }
